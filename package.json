@@ -1,0 +1,26 @@
+{
+  "name": "chlog-to-html-list",
+  "version": "0.0.0",
+  "description": "Changelog to html list.(ul or ol)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AC34/npm-chlog-to-html-list.git"
+  },
+  "keywords": [
+    "changelog",
+    "html",
+    "list",
+    "ul",
+    "ol"
+  ],
+  "author": "AC34 <grepoac34devahead@yahoo.co.jp>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AC34/npm-chlog-to-html-list/issues"
+  },
+  "homepage": "https://github.com/AC34/npm-chlog-to-html-list#readme"
+}
