@@ -1,19 +1,20 @@
 var ChangeLogToHtmlList = {
-  messages = require("./src/util/getMessages")(),
   list_types:{
     ul:"ul",
     ol:"ol"
   }
 };
-ChangeLogToHtmlList.getList = function(list_type){
-  
+ChangeLogToHtmlList.getList = function(args={}){
+  var msgs = require("./src/util/getMessages")();
+  var pj = getPackageJson();
+   
 }
 
 
 function getPackageJson(){
 
 }
-function getChangelogFile(){
+function getChangelogFile(path){
 
 }
 
