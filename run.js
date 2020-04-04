@@ -1,1 +1,2 @@
-var require("./index");
+var chlist = require("./index");
+chlist.getList();
