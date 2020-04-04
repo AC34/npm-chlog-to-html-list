@@ -8,17 +8,18 @@ function getMessages(locale=""){
   var fs = require("fs");
   var sep = require("path").sep;
   //initialize
-  locale = locale===""?"en_US":lang;
+  locale = locale===""?"en_US":locale;
+
   try{
-    var ln = lang.split("_")[0];
-    var cn = lang.split("_")[1];
-    var msg_file = __dirname+sep+"messages"+sep+ln+cn+".js";
-    console.log("loading message file:"+msg_file);
+    var lang = locale.split("_")[0];
+    var country= locale.split("_")[1];
+    var msg_file = __dirname+sep+"messages"+sep+lang+sep+country+".js";
     var msg = fs.readFileSync(msg_file,"UTF-8");
     return msg;
   }catch(e){
+    console.log("load failed:"+e);
     return false;
   }
 }
 
-module.exports = getMessages();
+module.exports = getMessages;
