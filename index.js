@@ -12,9 +12,8 @@ var ChangeLogToHtmlList = {
   },
   getList: function (args = {}) {
     var msgs = require("./src/util/getMessages")();
-    console.log("msgs loaded:"+msgs);
     var pi = makeProjectInfo(args,msgs);
-    console.log("pi:"+JSON.stringify(pi,null," ")); 
+     
   }
 };
 
