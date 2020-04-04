@@ -6,15 +6,17 @@ var ChangeLogToHtmlList = {
   getList:function(args ={}){
     var msgs = require("./src/util/getMessages")("");
     var pj = getPackageJson();
-
+     
   }
 };
 
-function getPackageJson(){
+function getPackageJson(path=""){
+  path = path===""?"package.json":path;
 
 }
-function getChangelogFile(path){
 
+function getChangelogFile(path){
+  
 }
 
 module.exports = ChangeLogToHtmlList;
