@@ -6,7 +6,6 @@ function getPackageJson(project_root, package_json_path, msgs) {
   var json = require("fs").readFileSync(jpath, "UTF-8");
   if (!require("fs").existsSync(jpath)) {
     console.log(msgs["file-not-found"]({ path: jpath }));
-    process.exit(1);
   }
   try {
     var pj = JSON.parse(json);
