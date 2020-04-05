@@ -17,9 +17,8 @@ function parseLogFile(log_file,msgs){
 
 function parseIntoBlocks(log_file,msgs){
   var splitLogs = require("./parse/parser/splitLogs"); 
-  var trim = require("./parse/parser/trim");
    
-  return splitLogs(trim(log_file,msgs));
+  return splitLogs(log_file,msgs);
 }
 /**
  * validstes log file.
@@ -36,7 +35,7 @@ function isValidLogFile(log_file,msgs){
     console.log(msgs["empty-log"]());
     return false;
   }
-  if(log_file.indexOf(/[.*].*/g)===-1){
+  if(log_file.indexOf("[")===-1){
     //no section
     console.log(msgs["invalid-log"]());
     return false;
