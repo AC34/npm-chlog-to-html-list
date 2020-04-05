@@ -11,5 +11,7 @@ module.exports = {
   "process-abort":function(args={}){
     return "process abort.";
   },
-
+  "empty_log":function(){
+    return "Changelog was found to be empty."
+  }
 };
