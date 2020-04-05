@@ -11,7 +11,7 @@ function parseLogFile(log_file,msgs){
     return {};
   }
   var blocks = parseIntoBlocks(log_file); 
-      
+            
 }
 
 function parseIntoBlocks(log_file,msgs){

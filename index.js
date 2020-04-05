@@ -13,7 +13,7 @@ var ChangeLogToHtmlList = {
   getList: function (args = {}) {
     var msgs = require("./src/util/getMessages")();
     var pi = makeProjectInfo(args,msgs);
-      
+     
   }
 };
 
