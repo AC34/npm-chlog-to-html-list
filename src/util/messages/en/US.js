@@ -8,10 +8,10 @@ module.exports = {
   "changlog-load-failed":function(args={}){
     return "changelog loading failed.";
   },
-  "process-abort":function(args={}){
-    return "process abort.";
-  },
   "empty-log":function(){
     return "Changelog was found to be empty."
+  },
+  "invalid-log":function(){
+    return "Changelog was found to be invalid string";
   }
 };

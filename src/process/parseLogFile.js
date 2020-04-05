@@ -7,20 +7,40 @@
  */
 function parseLogFile(log_file,msgs){
   var ret = {};
+  if(!isValidLogFile(log_file,msgs)){
+    return {};
+  }
   var blocks = parseIntoBlocks(log_file); 
-    
+      
 }
 
-function parseIntoBlocks(msgs){
+function parseIntoBlocks(log_file,msgs){
   var splitLogs = require("./parse/parser/splitLogs"); 
   var trim = require("./parse/parser/trim");
-  return splitLogs(trim);
-}
 
-function validateLogFile(log_file,msgs){
-  if(log_file===""){
-    console.log(msgs[""]);
+  return splitLogs(trim(log_file,msgs));
+}
+/**
+ * validstes log file.
+ * @param {string} log_file 
+ * @param {object} msgs 
+ * @return {boolean} valid
+ */
+function isValidLogFile(log_file,msgs){
+  if(!log_file){
+    console.log(msgs["empty-log"]());
+    return false;
   }
+  if(log_file===""){
+    console.log(msgs["empty-log"]());
+    return false;
+  }
+  if(log_file.indexOf(/[.*].*/g)){
+    //no section
+    console.log(msgs["invalid-log"]());
+    return false;
+  } 
+  return true;
 } 
 
 module.exports = parseLogFile;
