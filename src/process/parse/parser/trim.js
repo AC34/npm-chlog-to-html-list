@@ -5,25 +5,25 @@
  * @return {string} trimed_line
  */
 function trim(line){
-  //slashes
-  line = trimChars("/");
-  //*
-  line = trimChars("*"); 
-  //final spaces
-  line = trimChars(" ");
+  //tabs
+  line = trimChars(line,"\t");
+  //spaces
+  line = trimChars(line," ");
   return line;
 }
 function trimChars(line,character){
   //trim spaces first
-  line = trimChars(line," ");
   if(line.startsWith(character)){
+    console.log("starts with:"+character);
     line = line.substring(1,line.length);
-    return trimSpaces(line,character);
+    return trimChars(line,character);
   }
   if(line.endsWith(character)){
-    line = line.substring(0,line.length-1);
-    return trimSpaces(line,character);
+    console.log("ends with:"+character);
+    line = line.substring(0,line.length);
+    return trimChars(line,character);
   }
+  console.log("returning line:"+line);
   return line;
 }
 
