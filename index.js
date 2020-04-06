@@ -17,8 +17,6 @@ var ChangeLogToHtmlList = {
      
     var parse = require("./src/process/parseLogFile");
     var mid_obj = parse(pi.changelog,msgs);
-    console.log("mid_obj:"+JSON.stringify(mid_obj,null," "));
-     
   }
 };
 

@@ -2,9 +2,9 @@ function splitLogs(log){
   //formatting
   var lines = trimAllLines(log);
   //parse into blocks
-  var blocks = parseIntoBlocks(lines);
-  console.log("blocks:"+blocks);    
+  return blocks = parseIntoBlocks(lines);
 }
+
 function trimAllLines(log){
   var trim = require("./util/trim");
   log = log.replace(new RegExp("\\r\\n","g"),"\n");
@@ -14,6 +14,7 @@ function trimAllLines(log){
   } 
   return lines;
 }
+
 function parseIntoBlocks(lines){
   var blocks = [];
   var current = "";

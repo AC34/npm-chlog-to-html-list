@@ -16,9 +16,14 @@ function parseLogFile(log_file,msgs){
 }
 
 function parseIntoBlocks(log_file,msgs){
+  //prepare
   var splitLogs = require("./parse/parser/splitLogs"); 
-   
-  return splitLogs(log_file,msgs);
+  var parseBlocks = require("./parse/parseBlocks");
+  //string into blocks of strings
+  var blocks_strs = splitLogs(log_file,msgs);
+  //string blocks into objects(object)
+  var blocks = parseBlocks(blocks_strs); 
+  return blocks; 
 }
 /**
  * validstes log file.
