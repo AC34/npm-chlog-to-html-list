@@ -14,16 +14,13 @@ function trim(line){
 function trimChars(line,character){
   //trim spaces first
   if(line.startsWith(character)){
-    console.log("starts with:"+character);
     line = line.substring(1,line.length);
     return trimChars(line,character);
   }
   if(line.endsWith(character)){
-    console.log("ends with:"+character);
     line = line.substring(0,line.length);
     return trimChars(line,character);
   }
-  console.log("returning line:"+line);
   return line;
 }
 
