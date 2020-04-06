@@ -1,17 +1,38 @@
 function splitLogs(log){
-  var trim = require("./trim");
-  
-  var lines = splitByLF(log); 
-  for(var i in lines){
-    var line = trim(lines[i]);
-    console.log("line:"+i+":"+line);
-  } 
+  //formatting
+  var lines = trimAllLines(log);
+  //parse into blocks
+  var blocks = parseIntoBlocks(lines);
+  console.log("blocks:"+blocks);    
 }
-function splitByLF(log){
-  //convert \r\n lf to \n
+function trimAllLines(log){
+  var trim = require("./util/trim");
   log = log.replace(new RegExp("\\r\\n","g"),"\n");
-  return log.split("\n");
+  var lines = log.split("\n"); 
+  for(var i in lines){
+    lines[i] = trim(lines[i]);
+  } 
+  return lines;
 }
-
+function parseIntoBlocks(lines){
+  var blocks = [];
+  var current = "";
+  var isSectionStart = require("./util/isSectionStart");
+  for(var i in lines){
+    var line = lines[i];
+    if(isSectionStart(line)){
+      if(current!==""){
+        //dump old line
+        blocks.push(current);
+      }
+      //initialize
+      current = line;
+    }else{
+      //keep adding lines
+      current +="\n"+line;
+    }
+  }
+  return blocks;
+}
 
 module.exports = splitLogs;

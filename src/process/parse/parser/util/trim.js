@@ -11,6 +11,7 @@ function trim(line){
   line = trimChars(line," ");
   return line;
 }
+
 function trimChars(line,character){
   //trim spaces first
   if(line.startsWith(character)){
