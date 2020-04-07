@@ -14,7 +14,7 @@ var ChangeLogToHtmlList = {
     //prpeare
     var msgs = require("./src/util/getMessages")();
     var pi = makeProjectInfo(args,msgs);
-     
+
     var parse = require("./src/process/parseLogFile");
     var mid_obj = parse(pi.changelog,msgs);
   }

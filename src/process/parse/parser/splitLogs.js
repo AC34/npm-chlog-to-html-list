@@ -18,7 +18,7 @@ function trimAllLines(log){
 function parseIntoBlocks(lines){
   var blocks = [];
   var current = "";
-  var isSectionStart = require("./util/isSectionStart");
+  var isSectionStart = require("./util/detect/isSectionStart");
   for(var i in lines){
     var line = lines[i];
     if(isSectionStart(line)){
