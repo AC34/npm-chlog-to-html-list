@@ -9,7 +9,8 @@ function parseSection(block_str){
   var obj = {};
   obj.version = parseVersion(block_str);
   obj.version_text = parseVersionText(block_str);     
-  obj = Object.merge({},obj,parseTheRest(block_str));
+  var the_rest = parseTheRest(block_str); 
+  console.log("the_rest:"+JSON.stringify(the_rest,null," "));
   return obj;
 }
 function parseVersion(block_str){
@@ -37,15 +38,16 @@ function parseTheRest(block_str){
       //update entry
       entry = parseEntryTitle(block_str[i]);
       //initialize
-      block[entry] = [];
+      obj[entry] = [];
       continue;
     }
     if(isContentLine()){
-      var line = parserContentLine([i]); 
-      block[entry].push(line);
+      var block = parserContentLine([i]); 
+      obj[entry].push(block);
       continue;
     }
   }
+  return obj;
 }
 
 function isEntryTitleLine(line){

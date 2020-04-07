@@ -1,6 +1,7 @@
 /**
  * 
  * @param {string} line 
+ * @preturn {string}
  */
 function isLinkEntry(line){
   var exp = new RegExp(/^[.*]:\s*http.*/);

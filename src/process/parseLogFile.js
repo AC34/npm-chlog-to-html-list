@@ -25,6 +25,7 @@ function parseIntoBlocks(log_file,msgs){
   var blocks = parseBlocks(blocks_strs); 
   return blocks; 
 }
+
 /**
  * validstes log file.
  * @param {string} log_file 

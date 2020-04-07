@@ -9,9 +9,10 @@ function parseBlocks(blocks_strs){
   for(var i in blocks_strs){
     var str = blocks_strs[i];
     var block = parseSection(str);  
-    console.log("block:"+JSON.stringify(block,null," "));
     //unknown type. just ignoring. 
     block = Object.assign({},block,parseSection(blocks_strs[i]));
+    console.log("block:"+JSON.stringify(block,null," "));
+      
   }
 }
 

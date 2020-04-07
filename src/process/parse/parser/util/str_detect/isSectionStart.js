@@ -15,7 +15,6 @@ function isNewSection(line){
   if(line.match(exp)===null){
     return false;
   }
-  console.log("line matched:"+line);
   return true;
 }
 
