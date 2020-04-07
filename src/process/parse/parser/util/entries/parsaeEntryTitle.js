@@ -4,7 +4,7 @@
  * @return {string} parsed_title
  * returns empty string 
  */
-function parsEntryTitle(line){ 
+function parseEntryTitle(line){ 
   line = trimHeadingSharps(line);
   var title = "";
   if(line.indexOf(" ")>0){
