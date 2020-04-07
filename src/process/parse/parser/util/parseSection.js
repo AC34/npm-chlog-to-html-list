@@ -1,5 +1,5 @@
 /**
- *     
+ *  
  * @param {string} block_str 
  * @return {object} parsed object
  * parsed object may contain keys below:
@@ -24,6 +24,29 @@ function parseVersionText(block_str){
   var start = line.indexOf("[")+1; 
   return line.substring(start,line.length);
 }
+function parseTheRest(block_str){
+  var parseEntryTitle = require("./entries/parsaeEntryTitle");
+  var len = block_str.length;
+  var entry ="global";
+  var obj = {};
+  //first line is already being parsed.
+  for(var i = 1; i< len;i++) {
+    if(isEntryTitleLine){
+      
+      continue;
+    }
+    if(isContentLine()){
 
+      continue;
+    }
+  }
+}
+
+function isEntryTitleLine(line){
+  return false;
+}
+function isContentLine(line){
+  return false;
+}
 
 module.exports = parseSection;
