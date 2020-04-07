@@ -11,10 +11,11 @@ function isSectionStart(line){
   }
 }
 function isNewSection(line){
-  var exp = new RegExp(/^#*\s*\[.*.*\].*/,"");
+  var exp = new RegExp(/^#{1,6}\s*\[.*.*\].*/,"");
   if(line.match(exp)===null){
     return false;
   }
+  console.log("line matched:"+line);
   return true;
 }
 
