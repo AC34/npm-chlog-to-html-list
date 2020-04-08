@@ -26,7 +26,7 @@ function parseIntoBlocks(log_file,msgs){
   var blocks = parseBlocks(blocks_strs); 
   //resolve details of gathered information
   blocks = resolveBlocks(blocks);
-  console.log("blocks:"+JSON.stringify(blocks,null," "));
+  //console.log("blocks:"+JSON.stringify(blocks,null," "));
   return blocks; 
 }
 
