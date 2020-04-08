@@ -10,9 +10,10 @@ function splitLogs(log) {
   return blocks = parseIntoBlocks(lines);
 }
 /**
- * 
+ * parses each line of log and trims unnecessary letters.
+ *   
  * @param {string} log 
- * @param {string} log
+ * @param {array} trimmed_logs in an array
  */
 function trimAllLines(log) {
   var trim = require("./util/trim");
@@ -24,8 +25,10 @@ function trimAllLines(log) {
   return lines;
 }
 /**
- * 
+ * Parses each line of the log and places each line somewhere.
+ * returned objects are are in an arrray.
  * @param {array} lines 
+ * @return {array} array of objects.
  */
 function parseIntoBlocks(lines) {
   var blocks = [];
