@@ -4,7 +4,7 @@
  * @preturn {string}
  */
 function isLinkEntry(line){
-  var exp = new RegExp(/^[.*]:\s*http.*/);
+  var exp = new RegExp(/^\[.*\]\:\s*http.*/);
   if(line.match(exp)===null){
      return false;
   }     
