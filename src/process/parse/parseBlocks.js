@@ -11,8 +11,6 @@ function parseBlocks(blocks_strs){
     var block = parseSection(str);  
     //unknown type. just ignoring. 
     block = Object.assign({},block,parseSection(blocks_strs[i]));
-    console.log("block:"+JSON.stringify(block,null," "));
-    
   }
   return blocks;
 }
