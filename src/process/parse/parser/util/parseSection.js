@@ -1,60 +1,74 @@
 /**
- *  
- * @param {string} block_str 
+ *
+ * @param {string} block_str
  * @return {object} parsed object
  * parsed object may contain keys below:
  * version,version_text
  */
-function parseSection(block_str){
+function parseSection(block_str) {
+  var isLinkEntry = require("./str_detect/isLinkEntryLine");
+  var parseLinkVersion = require("./entries/parseLinkVersion");
+  var parseLink = require("./entries/parseLink");
   var obj = {};
+  if(isLinkEntry(block_str)){
+    var link_version = parseLinkVersion(block_str); 
+    var link = parseLink(block_str);
+    console.log("link parsed"+link);
+    obj[link_version] = link;
+    return obj;
+  }
+  //create link only object
   obj.version = parseVersion(block_str);
-  obj.version_text = parseVersionText(block_str);     
-  var the_rest = parseTheRest(block_str); 
-  console.log("the_rest:"+JSON.stringify(the_rest,null," "));
+  obj.version_text = parseVersionText(block_str);
+  var the_rest = parseTheRest(block_str);
+  obj = Object.assign(obj, the_rest);
+  //console.log("obj:"+JSON.stringify(obj,null," "));
   return obj;
 }
-function parseVersion(block_str){
+function parseVersion(block_str) {
   var line = block_str.split("\n")[0];
-  var start = line.indexOf("[")+1;
+  var start = line.indexOf("[") + 1;
   var end = line.indexOf("]");
-  var v = line.substring(start,end);
+  var v = line.substring(start, end);
   return v;
 }
-function parseVersionText(block_str){
+function parseVersionText(block_str) {
   var line = block_str.split("\n")[0];
-  line =line.trim();
-  var start = line.indexOf("[")+1; 
-  return line.substring(start,line.length);
+  line = line.trim();
+  var start = line.indexOf("[") + 1;
+  return line.substring(start, line.length);
 }
-function parseTheRest(block_str){
-  var parseEntryTitle = require("./entries/parsaeEntryTitle");
-  var parserContentLine = require("./entries/parseContentLine");
-  var len = block_str.length;
-  var entry ="global";
+function parseTheRest(block_str) {
+  var isEntryTitle = require("./str_detect/isEntryTitle");
+  var parseEntryTitle = require("./entries/parseEntryTitle");
+  var parseContentLine = require("./entries/parseContentLine");
+
+  var lines = block_str.split("\n");
+  var len = lines.length;
+  var global_entry = "global";
+  var entry = "void";
   var obj = {};
   //first line is already being parsed.
-  for(var i = 1; i< len;i++) {
-    if(isEntryTitleLine){
+  for (var i = 1; i < len; i++) {
+    var line = lines[i];
+    if (isEntryTitle(line)) {
       //update entry
-      entry = parseEntryTitle(block_str[i]);
+      entry = parseEntryTitle(line);
       //initialize
       obj[entry] = [];
       continue;
     }
-    if(isContentLine()){
-      var block = parserContentLine([i]); 
-      obj[entry].push(block);
-      continue;
+    //treat the rest as content
+    var c_line = parseContentLine(line);
+    if(obj[entry]){
+      obj[entry].push(c_line);
+    }else{
+      //initialize
+      if(!obj[global_entry])obj[global_entry] = [];
+      obj[global_entry].push(c_line);
     }
   }
   return obj;
-}
-
-function isEntryTitleLine(line){
-  return line.startsWith("#")
-}
-function isContentLine(line){
-  return line.startsWith("#");
 }
 
 module.exports = parseSection;

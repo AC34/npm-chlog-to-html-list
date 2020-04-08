@@ -3,7 +3,7 @@
  * @param {string} line 
  * @preturn {string}
  */
-function isLinkEntry(line){
+function isLinkEntryLine(line){
   var exp = new RegExp(/^\[.*\]\:\s*http.*/);
   if(line.match(exp)===null){
      return false;
@@ -11,4 +11,4 @@ function isLinkEntry(line){
   return true;
 }
 
-module.exports = isLinkEntry;
+module.exports = isLinkEntryLine;

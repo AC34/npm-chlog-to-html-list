@@ -12,8 +12,9 @@ function parseBlocks(blocks_strs){
     //unknown type. just ignoring. 
     block = Object.assign({},block,parseSection(blocks_strs[i]));
     console.log("block:"+JSON.stringify(block,null," "));
-      
+    
   }
+  return blocks;
 }
 
 module.exports = parseBlocks;

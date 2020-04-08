@@ -18,35 +18,47 @@ function trimAllLines(log) {
 function parseIntoBlocks(lines) {
   var blocks = [];
   var current = "";
+  var index = 0;
   var isSectionStart = require("./util/str_detect/isSectionStart");
+  var isEntryTitle = require("./util/str_detect/isEntryTitle");
   var isLinkEntryLine = require("./util/str_detect/isLinkEntryLine");
-  var isContentLine = require("./util/str_detect/isContentLine");
   for (var i in lines) {
     var line = lines[i];
-    //section number with link
-    if (isLinkEntryLine(line)) {
-      //just push the last line
-      blocks.push(current);
+    //skip empty line
+    if(isEmptyLine(line)){
       continue;
     }
-    //new Entry
-    if (isSectionStart(line)) {
-      if (current !== "") {
-        //dump old line
+    if(isLinkEntryLine(line)){
+      if(current!==""){
         blocks.push(current);
       }
+      current = "";
+      blocks.push(line); 
+      //console.log("link:"+line);
+      continue;
+    }
+    //new Section
+    if (isSectionStart(line)) {
+      //console.log("newline:"+line);
+      //dump old line
+      blocks.push(current);
       //initialize
       current = line;
       continue;
     } 
-    if(isContentLine(line)){
-      //keep adding lines
+    //keep adding lines
+    if(current===""){
+      current = line;
+    //console.log("line:"+line);
+      continue;
+    }else{
       current += "\n" + line;
+    //console.log("line:"+line);
     }
-
-    //line thats unknown
   }
   return blocks;
 }
-
+function isEmptyLine(line){
+  return line.trim()==="";
+}
 module.exports = splitLogs;

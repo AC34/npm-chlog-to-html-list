@@ -8,12 +8,12 @@ function parseContentLine(line){
 }
 function trimHeading(line){
   if(line.startsWith("-")){
-    line = line.replace("-");
+    line = line.replace("-","");
     return trimHeading(line);
   }
   if(line.startsWith(" ")){
-    line = line.replace(" ");
-    return trimHeading(linle);
+    line = line.replace(" ","");
+    return trimHeading(line);
   }
   return line;
 }
