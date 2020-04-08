@@ -14,7 +14,13 @@ function parseLogFile(log_file,msgs){
   //returning
   return parseIntoBlocks(log_file); 
 }
-
+/**
+ * Splits log file by new section and links
+ * returns an array of strings.
+ * @param {string} log_file 
+ * @param {object} msgs 
+ * @param {array} blocks_str
+ */
 function parseIntoBlocks(log_file,msgs){
   //prepare
   var splitLogs = require("./parse/parser/splitLogs"); 
@@ -27,7 +33,7 @@ function parseIntoBlocks(log_file,msgs){
   //resolve details of gathered information
   blocks = resolveBlocks(blocks);
   console.log("blocks:"+JSON.stringify(blocks,null," "));
-  return blocks; 
+  return blocks;
 }
 
 /**
