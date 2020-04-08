@@ -13,8 +13,8 @@ function parseSection(block_str) {
   if(isLinkEntry(block_str)){
     var link_version = parseLinkVersion(block_str); 
     var link = parseLink(block_str);
-    obj[link_version] = link;
-    obj["type"] = "link";
+    obj["version"] = link_version;
+    obj["link"] = link;
     return obj;
   }
   //create link only object
