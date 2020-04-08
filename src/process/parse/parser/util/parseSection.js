@@ -7,14 +7,14 @@
  */
 function parseSection(block_str) {
   var isLinkEntry = require("./str_detect/isLinkEntryLine");
-  var parseLinkVersion = require("./entries/parseLinkVersion");
-  var parseLink = require("./entries/parseLink");
+  var parseLinkVersion = require("./parsers/parseLinkVersion");
+  var parseLink = require("./parsers/parseLink");
   var obj = {};
   if(isLinkEntry(block_str)){
     var link_version = parseLinkVersion(block_str); 
     var link = parseLink(block_str);
-    console.log("link parsed"+link);
     obj[link_version] = link;
+    obj["type"] = "link";
     return obj;
   }
   //create link only object
@@ -40,8 +40,8 @@ function parseVersionText(block_str) {
 }
 function parseTheRest(block_str) {
   var isEntryTitle = require("./str_detect/isEntryTitle");
-  var parseEntryTitle = require("./entries/parseEntryTitle");
-  var parseContentLine = require("./entries/parseContentLine");
+  var parseEntryTitle = require("./parsers/parseEntryTitle");
+  var parseContentLine = require("./parsers/parseContentLine");
 
   var lines = block_str.split("\n");
   var len = lines.length;

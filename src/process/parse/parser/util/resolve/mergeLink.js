@@ -5,7 +5,7 @@
  */
 function mergeLink(obj){
   for(var key in obj){
-
+     
   }
 }
 
