@@ -1,7 +1,8 @@
 /**
- * 
+ * makes blocks of strings into objects.
+ * objects will be returned in an array.
  * @param {string} blocks_strs 
- * 
+ * @return {array} array of objects
  */
 function parseBlocks(blocks_strs){
   var parseSection = require("./parser/util/parseSection");
