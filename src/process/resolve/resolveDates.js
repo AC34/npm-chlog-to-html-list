@@ -1,11 +1,11 @@
 /**
  * 
- * @param {object} object 
+ * @param {object} blocks 
  * @return {object}
  */
-function resolveDates(object){
-
-
+function resolveDates(blocks){
+   
+  return blocks; 
 }
 
 module.exports = resolveDates;

@@ -19,13 +19,14 @@ function parseIntoBlocks(log_file,msgs){
   //prepare
   var splitLogs = require("./parse/parser/splitLogs"); 
   var parseBlocks = require("./parse/parseBlocks");
-  var resolveBlocks = require("./resolveBlocks");
+  var resolveBlocks = require("./resolve/resolveBlocks");
   //string into blocks of strings
   var blocks_strs = splitLogs(log_file,msgs);
   //string blocks into objects(object)
   var blocks = parseBlocks(blocks_strs); 
   //resolve details of gathered information
   blocks = resolveBlocks(blocks);
+  console.log("blocks:"+JSON.stringify(blocks,null," "));
   return blocks; 
 }
 
