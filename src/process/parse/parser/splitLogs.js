@@ -1,10 +1,19 @@
+/**
+ * 
+ * @param {string} log 
+ * @return {}
+ */
 function splitLogs(log) {
   //formatting
   var lines = trimAllLines(log);
   //parse into blocks
   return blocks = parseIntoBlocks(lines);
 }
-
+/**
+ * 
+ * @param {string} log 
+ * @param {string} log
+ */
 function trimAllLines(log) {
   var trim = require("./util/trim");
   log = log.replace(new RegExp("\\r\\n", "g"), "\n");
@@ -14,7 +23,10 @@ function trimAllLines(log) {
   }
   return lines;
 }
-
+/**
+ * 
+ * @param {array} lines 
+ */
 function parseIntoBlocks(lines) {
   var blocks = [];
   var current = "";
@@ -52,6 +64,10 @@ function parseIntoBlocks(lines) {
   }
   return blocks;
 }
+/**
+ * @param {string} line 
+ * @return {string}
+ */
 function isEmptyLine(line){
   return line.trim()==="";
 }
