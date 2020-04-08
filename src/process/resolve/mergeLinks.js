@@ -8,13 +8,15 @@ function mergeLinks(blocks){
     if(!blocks[i].link)continue;
     if(!blocks[i].version)continue;
     var index = getIndexByVersion(blocks,blocks[i].version); 
-    if(index==-1)continue;//not found
+    if(index===-1)continue;//not found
     //move as link property 
     blocks[index].link = blocks[i].link;
-    //delete the link property
+    //fills the element by null
     delete blocks[i];
   }
-  return blocks;
+  //remove null elements
+  var ret = blocks.filter((e)=>{return e}); 
+  return ret;
 }
 /**
  * 
@@ -24,7 +26,7 @@ function mergeLinks(blocks){
  */
 function getIndexByVersion(obj,version){
   for(var i in obj){
-    if(obj.version===version){
+    if(obj[i].version===version&&!obj[i].link){
       return i;
     }
   }
