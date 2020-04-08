@@ -1,8 +1,10 @@
 /**
  * parses File into substitution object.
+ * The substituition oboject is an array of objects.
+ * objects in the array have at least version and version_text key.
  * @param {string} log_file
  * @param {object} msgs message object 
- * @return {object} substitution object.
+ * @return {array} substitution object.
  * return object has "sections" as 
  */
 function parseLogFile(log_file,msgs){
@@ -16,7 +18,6 @@ function parseLogFile(log_file,msgs){
 }
 /**
  * Splits log file by new section and links
- * returns an array of strings.
  * @param {string} log_file 
  * @param {object} msgs 
  * @param {array} blocks_str
@@ -26,13 +27,13 @@ function parseIntoBlocks(log_file,msgs){
   var splitLogs = require("./parse/parser/splitLogs"); 
   var parseBlocks = require("./parse/parseBlocks");
   var resolveBlocks = require("./resolve/resolveBlocks");
-  //string into blocks of strings
+  //string into an array of strings
   var blocks_strs = splitLogs(log_file,msgs);
   //string blocks into objects(object)
   var blocks = parseBlocks(blocks_strs); 
   //resolve details of gathered information
+  //parsed links of parseBlocks() will be mereged to whwere it should be.
   blocks = resolveBlocks(blocks);
-  console.log("blocks:"+JSON.stringify(blocks,null," "));
   return blocks;
 }
 
