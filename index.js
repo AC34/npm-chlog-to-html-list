@@ -9,14 +9,27 @@ var ChangeLogToHtmlList = {
     //from project root
     package_json_path: "package_json_path",
     changelog_path:"changelog_path",
+    verbose:"verbose"
   },
   getList: function (args = {}) {
     //prpeare
     var msgs = require("./src/util/getMessages")();
-    var pi = makeProjectInfo(args,msgs);
-
     var parse = require("./src/process/parseLogFile");
-    var mid_obj = parse(pi.changelog,msgs);
+    var toHtml = require("./src/process/convertToHtml");
+    //gathering and making project related information
+    var pi = makeProjectInfo(args,msgs);
+    //need to make sure args are validated
+    //needs to have: list_type
+    args = validateArguments(args,project_info);
+    /**
+     * actual process begins from here.
+     */
+    var parsed_obj = parse(pi.changelog,msgs);
+    //parse the log file into an array of objects, containing the log information
+    //now convert the middle object into html
+    var html = toHtml(parsed_obj,args.list_type,msgs);
+    //finally returning the value
+    return html;
   }
 };
 
@@ -42,6 +55,18 @@ function getProjectRootDir() {
   paths.pop(); //module itself
   paths.pop(); //node_modules
   return paths.join(sep);
+}
+/**
+ * Validates arguments, puts default values if anything goes wrong.
+ * @param {object} args 
+ * @param {object} project_info 
+ * @param {object} msgs
+ */
+function validateArguments(args,project_info,msgs){
+  //valid types 
+  var types = ChangeLogToHtmlList.list_types;
+   
+
 }
 
 module.exports = ChangeLogToHtmlList;
