@@ -1,10 +1,15 @@
 var ChangeLogToHtmlList = {
-  list_types: {
-    ul: "ul",
-    ol: "ol",
+  htmls: {
+    list_id: "list_id",
+    list_type: "list_type",
+    section_element: "section_element",
+    section_header_element: "section_header_element",
+    date_element: "date_element",
+    entry_element: "entry_element",
+    text_content_element: "text_content_element",
+    link_element: "link_element",
   },
   args_keys: {
-    list_type: "list_type",
     project_root: "project_root",
     entry_root: "entry_root",
     //from project root
@@ -21,7 +26,8 @@ var ChangeLogToHtmlList = {
     var toHtml = require("./src/process/convertToHtml");
     //need to make sure args are validated
     //needs to have: list_type
-    args = validateArguments(args,msgs);
+    args = validateArguments(args, msgs);
+    console.log("args:" + JSON.stringify(args, null, " "));
     /**
      * actual process begins from here.
      */
@@ -73,13 +79,18 @@ function validateArguments(args, msgs) {
   //valid types
   var defaults = {
     //defauilt is ul
-    list_type: {
-      default: "ul",
-      range: Object.keys(ChangeLogToHtmlList.list_types),
-    },
+    //htmls
+    list_id: { default: "changelog-list" },
+    list_type: { default: "ul" },
+    section_element: { default: "dl" },
+    section_header_element: { default: "dd" },
+    date_element: { default: "dd" },
+    entry_element: { default: "dt" },
+    text_content_element: { default: "dd" },
+    link_element: { default: "dd" }, //a tag is automatically added
+    //other
     project_root: {},
     entry_root: {},
-    //from project root
     //from project root
     package_json_path: {
       keys: ["package_json_path"],
@@ -128,7 +139,11 @@ function validateArguments(args, msgs) {
     msgs
   );
   var getChangelogFile = require("./src/util/getChangelogFile");
-  args.changelog = getChangelogFile(args.project_root, args.changelog_path, msgs);
+  args.changelog = getChangelogFile(
+    args.project_root,
+    args.changelog_path,
+    msgs
+  );
   return args;
 }
 
