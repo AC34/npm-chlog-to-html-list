@@ -13,14 +13,15 @@ var ChangeLogToHtmlList = {
     verbose: "verbose",
   },
   getList: function (args = {}) {
-    //prpeare
+    /**
+     * preparation
+     */
     var msgs = require("./src/util/getMessages")();
     var parse = require("./src/process/parseLogFile");
     var toHtml = require("./src/process/convertToHtml");
     //need to make sure args are validated
     //needs to have: list_type
     args = validateArguments(args,msgs);
-    console.log("validated args:"+JSON.stringify(args,null," "));
     /**
      * actual process begins from here.
      */
