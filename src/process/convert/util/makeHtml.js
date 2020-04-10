@@ -9,7 +9,7 @@ function makeHtml(el,content,attrs){
   for(var key in attrs){
     html += " "+key+"=\""+attrs[key]+"\"";
   }
-  html += ">"+content+"</"+el+">";
+  html += ">"+content+"</"+el+">\n";
   return html;
 }
 
