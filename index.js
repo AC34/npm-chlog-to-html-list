@@ -1,5 +1,5 @@
 var ChangeLogToHtmlList = {
-  htmls: {
+  html_keys: {
     list_id: "list_id",
     list_type: "list_type",
     section_element: "section_element",
@@ -31,7 +31,6 @@ var ChangeLogToHtmlList = {
      * actual process begins from here.
      */
     var parsed_obj = parse(args.changelog, msgs);
-    console.log("aprsed:"+JSON.stringify(parsed_obj,null," "))
     //parse the log file into an array of objects, containing the log information
     //now convert the middle object into html
     var html = toHtml(parsed_obj, args, msgs);
