@@ -21,12 +21,13 @@ var ChangeLogToHtmlList = {
     /**
      * preparation
      */
-    var msgs = require("./src/util/getMessages")();
+    var Console = require("./src/util/Console");
+    Console.msgs = require("./src/util/getMessages")();
     var parse = require("./src/process/parseLogFile");
     var toHtml = require("./src/process/convertToHtml");
     //need to make sure args are validated
     //needs to have: list_type
-    args = validateArguments(args, msgs);
+    args = validateArguments(args, Console);
     /**
      * actual process begins from here.
      */
@@ -66,15 +67,16 @@ function getProjectRootDir() {
   paths.pop(); //node_modules
   return paths.join(sep);
 }
+
 /**
  * Validates arguments, puts default values if anything goes wrong.
  * @param {object} args
  * @param {object} project_info
  * @param {object} msgs
  */
-function validateArguments(args, msgs) {
+function validateArguments(args, Console) {
   //gathering and making project related information
-  var pi = makeProjectInfo(args, msgs);
+  //var pi = makeProjectInfo(args, msgs);
   //valid types
   var defaults = {
     //defauilt is ul
@@ -133,15 +135,14 @@ function validateArguments(args, msgs) {
   //reading package.json file""
   var getPackageJson = require("./src/util/getPackageJson");
   args.package_json = getPackageJson(
-    args.project_root,
-    args.package_json_path,
-    msgs
+    args,
+    Console
   );
   var getChangelogFile = require("./src/util/getChangelogFile");
   args.changelog = getChangelogFile(
     args.project_root,
     args.changelog_path,
-    msgs
+    Console
   );
   return args;
 }
