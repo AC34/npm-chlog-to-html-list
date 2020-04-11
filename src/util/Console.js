@@ -1,21 +1,23 @@
-function Console(){
-  this.logs=[];
-  this.msgs = undefined; 
-  this.verbose = true;
-}
+var Console = {
+  logs:[],
+  msgs:undefined,
+  verbose:true
+};
 /**
- * 
+ * @param {object} args
  */
-Console.prototype.prepare=function(args){
+Console.prepare=function(args){
   if(args.verbose){
     this.verbose = args.verbose;
   } 
+  //load msgs
+  this.msgs = require("./getMessages")();
 }
 /**
  * @param {msg_key} string
  * @param {object} args
  */
-Console.prototype.log = function(msg_key,args){
+Console.log = function(msg_key,args){
   var msg = this.msgs[msg_key](args);
   this.log.push(msg); 
   if(this.verbose===true){
