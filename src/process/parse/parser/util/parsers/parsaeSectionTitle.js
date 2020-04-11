@@ -8,10 +8,10 @@ function parseEntryTitle(line){
   line = trimHeadingSharps(line);
   var title = "";
   if(line.indexOf(" ")>0){
-    title = line.substring(0,line.indexIf(" "));
+    title = line.substring(0,line.indexOf(" "));
   }else{
     //entire line must be entry title 
-    titlet = line;
+    title = line;
   }
   return title;
 } 
