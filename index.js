@@ -31,10 +31,10 @@ var ChangeLogToHtmlList = {
     /**
      * actual process begins from here.
      */
-    var parsed_obj = parse(args.changelog, msgs);
+    var parsed_obj = parse(args.changelog, Console);
     //parse the log file into an array of objects, containing the log information
     //now convert the middle object into html
-    var html = toHtml(parsed_obj, args, msgs);
+    var html = toHtml(parsed_obj, args, Console);
     //finally returning the value
     return html;
   },
