@@ -34,7 +34,7 @@ function parseVersion(block_str) {
 function parseVersionText(block_str) {
   var line = block_str.split("\n")[0];
   line = line.trim();
-  var start = line.indexOf("[") + 1;
+  var start = line.indexOf("[");
   return line.substring(start, line.length);
 }
 function parseTheRest(block_str) {
