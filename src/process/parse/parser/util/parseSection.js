@@ -22,7 +22,6 @@ function parseSection(block_str) {
   obj.version_text = parseVersionText(block_str);
   var the_rest = parseTheRest(block_str);
   obj = Object.assign(obj, the_rest);
-  //console.log("obj:"+JSON.stringify(obj,null," "));
   return obj;
 }
 function parseVersion(block_str) {

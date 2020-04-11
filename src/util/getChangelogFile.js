@@ -8,8 +8,8 @@ function getChangelogFile(project_root, changelog_path="", msgs) {
   //making path
   var cpath = project_root + sep + changelog_path;
   if (!require("fs").existsSync(cpath)) {
-    console.log(msgs["file-not-found"]({ path: cpath }));
-    console.log(msgs["process-abort"]());
+    Console.log("file-not-found",{path:cpath});
+    Console.log("process-abort",{path:cpath});
     process.exit(1);
   }
   try {
@@ -17,8 +17,8 @@ function getChangelogFile(project_root, changelog_path="", msgs) {
     //success
     return c;
   } catch (e) {
-    console.log(msgs["changlog-load-failed"]());
-    console.log(msgs["process-abort"]());
+    Console.log("changlog-load-failed",{});
+    Console.log("process-abort",{});
     process.exit(1);
   }
 }

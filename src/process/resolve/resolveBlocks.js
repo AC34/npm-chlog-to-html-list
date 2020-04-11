@@ -12,7 +12,6 @@ function resolveBlocks(obj){
   obj = mergeLinks(obj);
   //resolve issue dates
   obj = resolveDates(obj); 
-  //console.log("resolved:"+JSON.stringify(obj,null," "));
   return obj;
 }
 
