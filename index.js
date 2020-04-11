@@ -22,7 +22,7 @@ var ChangeLogToHtmlList = {
      * preparation
      */
     var Console = require("./src/util/Console");
-    Console.msgs = require("./src/util/getMessages")();
+    Console.prepare(args);  
     var parse = require("./src/process/parseLogFile");
     var toHtml = require("./src/process/convertToHtml");
     //need to make sure args are validated
@@ -40,21 +40,6 @@ var ChangeLogToHtmlList = {
   },
 };
 
-function makeProjectInfo(args = {}, msgs) {
-  var ret = {};
-  ret.project_root = getProjectRootDir();
-  ret.entry_root = getEntryPointDir();
-  //reading package.json file""
-  var getPackageJson = require("./src/util/getPackageJson");
-  ret.package_json = getPackageJson(
-    ret.project_root,
-    args.package_json_path,
-    msgs
-  );
-  var getChangelogFile = require("./src/util/getChangelogFile");
-  ret.changelog = getChangelogFile(ret.project_root, args.changelog_path, msgs);
-  return ret;
-}
 
 function getEntryPointDir() {
   return __dirname;
