@@ -17,7 +17,7 @@ function getPackageJson(args, Console) {
     //success
     return pj;
   } catch (e) {
-    Console.log("packagejson-parse-failed",());
+    Console.log("packagejson-parse-failed",{});
   }
 }
 module.exports = getPackageJson;
