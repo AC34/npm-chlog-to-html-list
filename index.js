@@ -61,7 +61,6 @@ function getProjectRootDir() {
  */
 function validateArguments(args, Console) {
   //gathering and making project related information
-  //var pi = makeProjectInfo(args, msgs);
   //valid types
   var defaults = {
     //defauilt is ul
