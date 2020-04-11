@@ -57,7 +57,7 @@ function getProjectRootDir() {
  * Validates arguments, puts default values if anything goes wrong.
  * @param {object} args
  * @param {object} project_info
- * @param {object} msgs
+ * @param {object} Console
  */
 function validateArguments(args, Console) {
   //gathering and making project related information
