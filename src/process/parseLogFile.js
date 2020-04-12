@@ -56,7 +56,7 @@ function isValidLogFile(log_file,Console){
     //no section
     Console.log("invalid-log",{});
     return false;
-  } 
+  }
   return true;
 } 
 

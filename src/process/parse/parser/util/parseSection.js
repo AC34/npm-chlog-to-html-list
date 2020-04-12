@@ -1,5 +1,4 @@
 /**
- *
  * @param {string} block_str
  * @return {object} parsed object
  * parsed object may contain keys below:
@@ -34,8 +33,13 @@ function parseVersion(block_str) {
 function parseVersionText(block_str) {
   var line = block_str.split("\n")[0];
   line = line.trim();
-  var start = line.indexOf("[");
-  return line.substring(start, line.length);
+  var start = line.indexOf("]")+1;  
+  line = line.substring(start, line.length);
+  line = line.trim(); 
+  while(line.startsWith("-")){
+    line = line.replace("-","");
+  }
+  return line; 
 }
 function parseTheRest(block_str) {
   var isEntryTitle = require("./str_detect/isEntryTitle");

@@ -1,16 +1,15 @@
 /**
- * 
  * @param {string} line 
  * @return {string} parsed_line
  */
 function parseEntryTitle(line){
-  var ret = trimSharps(line).trim();  
+  var ret = stripHeadingSharps(line).trim();  
   return ret;
 }
-function trimSharps(line){
+function stripHeadingSharps(line){
   if(line.startsWith("#")){
     line = line.replace("#","");
-    return trimSharps(line);
+    return stripHeadingSharps(line);
   }
   return line;
 }

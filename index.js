@@ -68,9 +68,9 @@ function validateArguments(args, Console) {
     list_id: { default: "changelog-list" },
     list_type: { default: "ul" },
     section_element: { default: "dl" },
-    section_header_element: { default: "dd" },
+    section_header_element: { default: "dt" },
     date_element: { default: "dd" },
-    entry_element: { default: "dt" },
+    entry_element: { default: "dd" },
     text_content_element: { default: "dd" },
     link_element: { default: "dd" }, //a tag is automatically added
     //other

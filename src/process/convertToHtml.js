@@ -11,6 +11,9 @@ function convertToHtml(parsed_object, args, Console) {
   for (var i in parsed_object) {
     var obj = parsed_object[i];
     var section = "";
+    if(obj.version!==undefined){
+      section += makeHtml(args.section_header_element, obj.version, {});
+    }
     //version_text
     if (obj.version_text!==undefined) {
       section += makeHtml(args.section_header_element, obj.version_text, {});
