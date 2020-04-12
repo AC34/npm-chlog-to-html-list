@@ -1,5 +1,5 @@
 /**
- * 
+ * parses link line.
  * @param {string} link_line 
  * @return {string}
  */
