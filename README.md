@@ -36,11 +36,11 @@ A very simple blueprint of yoru script may be as below:
 ```
  var lister = require("chlog-to-html-list");
  var list = lister.getList({
-   
+    
  });
  //embed the generated list to your html page.
 ```
-   
+ 
 ## Options
 Available options are as follows:
 
@@ -52,8 +52,8 @@ Available options are as follows:
 #### Options for Paths
 |        key        |  type   |    default     | description                                            |
 | :---: | :---: | :---: |:--- |
-|changelog_path||"CHANGELOG.md"|
-|package_json_path||"package.json"|
+|changelog_path|string|"<span>CHANGELOG.md</span>"|
+|package_json_path|string|"package.json"|
 
 #### Options for html outputs
 |        key        |  type   |    default     | description                                            |
