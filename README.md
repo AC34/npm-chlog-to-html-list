@@ -14,11 +14,12 @@ Install it as devDependencies.
 npm install --save-dev npm-chlog-to-html-list
 ```
 ## Usage
-1. Create a Node.js file, require your file first.
-2. call getList method
 <ol>
   <li>
-    <p>Load the module.</p>
+    <p>Create a Node.js file, require your file.</p>
+  </li>
+  <li>
+    <p>Call "getList" method</p>
   </li>
   <li>
     <p>Call getList method.</p>
@@ -27,16 +28,18 @@ npm install --save-dev npm-chlog-to-html-list
       <li><p>Give options as key-value pairs.</p></li>   
     </ol>
   </li>
+  <li>
+    <p>Run the script and use the acquired list for your html pages.</p>
+  </li>
+
 </ol>
-  3. run the script by,
-  4. Use the list in your html pages.
 
 ### Blueprint
 A very simple blueprint of yoru script may be as below:
 ```
  var lister = require("chlog-to-html-list");
  var list = lister.getList({
-    
+    changelog_path:"path_to_changelog.md" 
  });
  //embed the generated list to your html page.
 ```
@@ -52,8 +55,8 @@ Available options are as follows:
 #### Options for Paths
 |        key        |  type   |    default     | description                                            |
 | :---: | :---: | :---: |:--- |
-|changelog_path|string|"<span>CHANGELOG.md</span>"|
-|package_json_path|string|"package.json"|
+|changelog_path|string|"<span>CHANGELOG.md</span>"|Path to the changelog file(from the root path).|
+|package_json_path|string|"package.json"|Path to the package.json file(from the root path).|
 
 #### Options for html outputs
 |        key        |  type   |    default     | description                                            |
@@ -62,9 +65,10 @@ Available options are as follows:
 |list_type|string|"ul"|The list type of the most outer element of the output html.|
 
 ## Roadmap
- - Everything should be fine by 1.0.0.
-No further development has been planned.
- - However, there can be some updates related to:
+ Everything should be fine by 1.0.0.
+No further development is being planned.
+
+ However, there can be some updates related to:
  - dependency updates
  - language udpates
  - updates on changelog schemes.
