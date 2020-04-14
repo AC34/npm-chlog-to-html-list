@@ -9,7 +9,7 @@ var Console = {
 Console.prepare=function(args){
   if(args.verbose){
     this.verbose = args.verbose;
-  } 
+  }
   //load msgs
   this.msgs = require("./getMessages")();
 }
@@ -19,7 +19,7 @@ Console.prepare=function(args){
  */
 Console.log = function(msg_key,args){
   var msg = this.msgs[msg_key](args);
-  this.log.push(msg); 
+  this.logs.push(msg); 
   if(this.verbose===true){
     console.log(msg);
   }
