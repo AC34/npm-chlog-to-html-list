@@ -17,7 +17,7 @@ Console.prepare=function(args){
  * @param {msg_key} string
  * @param {object} args
  */
-Console.log = function(msg_key,args){
+Console.log = function(msg_key,args={}){
   var msg = this.msgs[msg_key](args);
   this.logs.push(msg); 
   if(this.verbose===true){
