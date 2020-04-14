@@ -2,8 +2,11 @@ module.exports = {
   "getList-started":function(args={}){
     return "getList started:";
   },
-  "getList-ended":function(args={}){
-    return "getList ended.";
+  "getList-successfully-ended":function(args={}){
+    return "getList unsuccessfully ended.";
+  },
+  "getList-unsuccessfully-ended":function(args={}){
+    return "getList unsuccessfully ended.";
   },
   "file-not-found":function(args={path:""}){
     return "File ["+args.path+"] not found."
