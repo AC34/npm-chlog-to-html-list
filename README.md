@@ -1,5 +1,4 @@
 # npm-chlog-to-html-list
-
 Changelog to html list, for embedding it to your html.
 
 ## Announcement
@@ -16,7 +15,7 @@ npm install --save-dev npm-chlog-to-html-list
 ## Usage
 <ol>
   <li>
-    <p>Create a Node.js file, require your file.</p>
+    <p>Create a Node.js file, require the module.(No need to Instantiate)</p>
   </li>
   <li>
     <p>Call "getList" method</p>
@@ -24,24 +23,27 @@ npm install --save-dev npm-chlog-to-html-list
   <li>
     <p>Call getList method.</p>
     <ol>
-      <li><p>Set option as an object "{}".</p></li>   
-      <li><p>Give options as key-value pairs.</p></li>   
+      <li><p>Set option as an object "{}".</p></li>
+      <li><p>Give options as key-value pairs.</p></li>
     </ol>
   </li>
   <li>
     <p>Run the script and use the acquired list for your html pages.</p>
   </li>
-
 </ol>
 
 ### Blueprint
 A very simple blueprint of yoru script may be as below:
 ```
+ //load the module
  var lister = require("chlog-to-html-list");
+
+ //give options as an object
  var list = lister.getList({
     changelog_path:"path_to_changelog.md" 
  });
- //embed the generated list to your html page.
+
+ //embed the generated list to your html page now.
 ```
  
 ## Options
