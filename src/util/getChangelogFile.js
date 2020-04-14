@@ -1,4 +1,4 @@
-function getChangelogFile(project_root, changelog_path="", msgs) {
+function getChangelogFile(project_root, changelog_path="", Console){
   var sep = require("path").sep;
   //formatting
   changelog_path = !changelog_path ? "CHANGELOG.md" : changelog_path;
