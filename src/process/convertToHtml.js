@@ -7,7 +7,7 @@ var makeHtml = require("./convert/makeHtml");
  */
 function convertToHtml(parsed_object, args, Console) {
   var html = "";
-  console.log("parsesd_object",JSON.stringify(parsed_object,null," "));
+  //console.log("parsesd_object",JSON.stringify(parsed_object,null," "));
   for (var i in parsed_object) {
     var obj = parsed_object[i];
     var section = "";
