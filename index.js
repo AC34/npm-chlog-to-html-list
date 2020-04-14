@@ -25,6 +25,8 @@ var ChangeLogToHtmlList = {
     Console.prepare(args);  
     var parse = require("./src/process/parseLogFile");
     var toHtml = require("./src/process/convertToHtml");
+    //notify start
+    Console.log("getList-started",{});
     //need to make sure args are validated
     //needs to have: list_type
     args = validateArguments(args, Console);
@@ -36,6 +38,8 @@ var ChangeLogToHtmlList = {
     //now convert the middle object into html
     var html = toHtml(parsed_obj, args, Console);
     //finally returning the value
+    //notify start
+    Console.log("getList-ended",{});
     return html;
   },
 };

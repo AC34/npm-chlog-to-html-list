@@ -30,7 +30,7 @@ function parseIntoBlocks(log_file,Console){
   //string into an array of strings
   var blocks_strs = splitLogs(log_file,Console);
   //string blocks into objects(object)
-  var blocks = parseBlocks(blocks_strs); 
+  var blocks = parseBlocks(blocks_strs);
   //resolve details of gathered information
   //parsed links of parseBlocks() will be mereged to whwere it should be.
   blocks = resolveBlocks(blocks);

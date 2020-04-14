@@ -1,4 +1,10 @@
 module.exports = {
+  "getList-started":function(args={}){
+    return "getList started:";
+  },
+  "getList-ended":function(args={}){
+    return "getList ended.";
+  },
   "file-not-found":function(args={path:""}){
     return "File ["+args.path+"] not found."
   },

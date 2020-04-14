@@ -1,5 +1,6 @@
 var chlist = require("../../index");
 var html = chlist.getList({
+  verbose:true,
   list_id:"test-id",
   list_type:"ol",
 });
