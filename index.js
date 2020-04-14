@@ -67,7 +67,6 @@ function validateArguments(args, Console) {
   //gathering and making project related information
   //valid types
   var defaults = {
-    //defauilt is ul
     //htmls
     list_id: { default: "changelog-list" },
     list_type: { default: "ul" },
