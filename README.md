@@ -3,6 +3,7 @@ Changelog to html list, for embedding it to your html.
 
 ## Announcement
 Nothing to announce.
+
 ## Requirements
  - [Node.js](https://nodejs.org/)
  - [npm](https://www.npmjs.com/)
@@ -66,11 +67,21 @@ Available options are as follows:
 |list_id|string|"changelog-list"|The id of the list(list_type).|
 |list_type|string|"ul"|The list type of the most outer element of the output html.|
 
+## Seeing log
+By default the option "verbose" is set to true.
+You could also get logs as an array so that you can store them if you want to.
+To get the log, just call the "getLog()" method.
+Note that an empty log will be returnedd when you call "getLog()" before calling "getList" method.
+example:
+```
+var logs = lister.getLog();
+```
 ## Roadmap
- Everything should be fine by 1.0.0.
+Everything should be fine by 1.0.0.
 No further development is being planned.
 
- However, there can be some updates related to:
+There can be some updates related to:
  - dependency updates
  - language udpates
  - updates on changelog schemes.
+
