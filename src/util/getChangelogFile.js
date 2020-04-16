@@ -9,8 +9,6 @@ function getChangelogFile(project_root, changelog_path="", Console){
   var cpath = project_root + sep + changelog_path;
   if (!require("fs").existsSync(cpath)) {
     Console.log("file-not-found",{path:cpath});
-    Console.log("getList-unsuccessfully-ended",{path:cpath});
-    process.exit(1);
   }
   try {
     var c = require("fs").readFileSync(cpath, "UTF-8");
@@ -18,8 +16,6 @@ function getChangelogFile(project_root, changelog_path="", Console){
     return c;
   } catch (e) {
     Console.log("changlog-load-failed",{});
-    Console.log("getList-unsuccessfully-ended",{});
-    process.exit(1);
   }
 }
 module.exports = getChangelogFile;

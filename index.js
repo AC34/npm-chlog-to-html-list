@@ -114,7 +114,7 @@ function validateArguments(args, Console) {
       }
     }
     //else leave it as is
-  } //for
+  }//for
   //update console verbose seting
   Console.vebose = args.verbose;
   //make project information
