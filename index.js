@@ -21,29 +21,28 @@ var ChangeLogToHtmlList = {
     /**
      * preparation
      */
-    var Console = require("./src/util/Console");
-    Console.prepare(args);  
+    this.Console = require("./src/util/Console");
+    this.Console.prepare(args);  
     var parse = require("./src/process/parseLogFile");
     var toHtml = require("./src/process/convertToHtml");
     //notify start
-    Console.log("getList-started",{});
+    this.Console.log("getList-started",{});
     //need to make sure args are validated
     //needs to have: list_type
-    args = validateArguments(args, Console);
+    args = validateArguments(args, this.Console);
     /**
      * actual process begins from here.
      */
     var parsed_obj = parse(args.changelog, Console);
     //parse the log file into an array of objects, containing the log information
     //now convert the middle object into html
-    var html = toHtml(parsed_obj, args, Console);
+    var html = toHtml(parsed_obj, args, this.Console);
     //finally returning the value
     //notify start
-    Console.log("getList-ended",{});
+    this.Console.log("getList-ended",{});
     return html;
   },
 };
-
 
 function getEntryPointDir() {
   return __dirname;
@@ -96,12 +95,12 @@ function validateArguments(args, Console) {
   if (typeof args !== "object") args = {}; //initialization
   for (var key in defaults) {
     //on empty key
-    if (!args[key]) {
+    if (args[key]===undefined) {
       //fill with default
       args[key] = defaults[key].default;
     }
     //check by range
-    if (defaults[key].range) {
+    if (defaults[key].range!==undefined) {
       var range_safe = false;
       for (var range_index in defaults[key].range) {
         if (args[key] === defaults[key].range[range_index]) {
@@ -116,6 +115,8 @@ function validateArguments(args, Console) {
     }
     //else leave it as is
   } //for
+  //update console verbose seting
+  Console.vebose = args.verbose;
   //make project information
   args.project_root = getProjectRootDir();
   args.entry_root = getEntryPointDir();
@@ -132,6 +133,12 @@ function validateArguments(args, Console) {
     Console
   );
   return args;
+}
+
+ChangeLogToHtmlList.getLog = function(){
+  if(!this.Console)return [];
+  if(!this.Console.logs)return [];
+  return this.Console.logs; 
 }
 
 module.exports = ChangeLogToHtmlList;

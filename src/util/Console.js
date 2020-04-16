@@ -7,7 +7,7 @@ var Console = {
  * @param {object} args
  */
 Console.prepare=function(args){
-  if(args.verbose){
+  if(args.verbose!==undefined){
     this.verbose = args.verbose;
   }
   //load msgs
