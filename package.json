@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/AC34/npm-chlog-to-html-list/issues"
   },
-  "homepage": "https://github.com/AC34/npm-chlog-to-html-list#readme"
+  "homepage": "https://github.com/AC34/npm-chlog-to-html-list#readme",
+  "devDependencies": {
+    "exec": "^0.2.1"
+  }
 }

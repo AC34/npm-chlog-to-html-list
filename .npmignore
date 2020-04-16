@@ -4,3 +4,4 @@ todo
 tests/**
 .gitignore
 publish_patch.js
+node_modules/**
