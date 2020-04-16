@@ -1,5 +1,5 @@
 # npm-chlog-to-html-list
-Changelog to html list, for embedding it to your html.
+[Changelog](https://keepachangelog.com/) to html list, for embedding it to your html.
 
 ## Announcement
 Nothing to announce.
