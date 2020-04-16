@@ -1,11 +1,18 @@
-var exec = require("exec");
+var exec = require('child_process');
 
 //prepare
 
 //update installed modules
-exec("npm install");
+exec.exec('npm install',(err,stdout,stderror)=>{
+  console.log(stdout);
+});
 
 //version up
-exec("npm version patch");
+exec.exec('npm version patch',(err,stdout,stderror)=>{
+  console.log(stdout);
+});
 //publish
-exec("npm publish");
+//exec("npm publish");
+exec.exec('npm publish',(err,stdout,stderror)=>{
+  console.log(stdout);
+});
