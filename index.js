@@ -35,7 +35,7 @@ var ChangeLogToHtmlList = {
      */
     var parsed_obj = parse(args.changelog, this.Console);
     //quito on falure
-    if(parsed_obj==={})return {};
+    if(parsed_obj==={})return "";
     //parse the log file into an array of objects, containing the log information
     //now convert the middle object into html
     var html = toHtml(parsed_obj, args, this.Console);
