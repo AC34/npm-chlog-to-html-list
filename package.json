@@ -1,10 +1,9 @@
 {
   "name": "chlog-to-html-list",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Changelog to html list.",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AC34/npm-chlog-to-html-list.git"
