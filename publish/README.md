@@ -1,6 +1,6 @@
 (setq markdown-xhtml-header-content
       "<style type='text/css'>
-  .changelog-list{
+  #changelog-list{
     width:100%;
     height:130px;
     overflow:scroll;
