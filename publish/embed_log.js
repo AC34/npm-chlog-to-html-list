@@ -16,7 +16,6 @@ c_path = c_path.replace(",","");
 var list = chlister.getList({
   changelog_path:c_path
 });
-console.log("list:"+list);
 
 //replace the list with where it should be in README
 rdm = rdm.replace(pat,list);
@@ -25,5 +24,3 @@ rdm = rdm.replace(pat,list);
 //no try-catch, coz I need to know any failure.
 var rdm_path = p_root.join(sep)+sep+"README.md";
 fs.writeFileSync(rdm_path,rdm,"UTF-8");
-
-
