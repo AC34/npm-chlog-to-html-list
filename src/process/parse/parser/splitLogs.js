@@ -65,6 +65,8 @@ function parseIntoBlocks(lines) {
       current += "\n" + line;
     }
   }
+  //add the very last block
+  if(current!=="")blocks.push(current);
   return blocks;
 }
 /**
