@@ -6,6 +6,7 @@
  - some parsing bug fixes
 ### Added
  - added this CHANGELOG.md 
+ - class option of html 
 
 ## [0.0.0]
 ### Changed
