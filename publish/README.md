@@ -1,11 +1,13 @@
-<style>
-  #changelog-list{
+(setq markdown-xhtml-header-content
+      "<style type='text/css'>
+  .changelog-list{
     width:100%;
     height:130px;
     overflow:scroll;
     resize:vertical; 
   }
-</style>
+</style>")
+
 # npm-chlog-to-html-list
 [Changelog](https://keepachangelog.com/) to html list, for embedding it to your html.
 
@@ -73,6 +75,7 @@ Available options are as follows:
 |        key        |  type   |    default     | description                                            |
 | :---: | :---: | :---: |:--- |
 |list_id|string|"changelog-list"|The id of the list(list_type).|
+|list_class|string|"changelog-list"|The class name of the list(list_type).|
 |list_type|string|"ul"|The list type of the most outer element of the output html.|
 
 ## Seeing log
