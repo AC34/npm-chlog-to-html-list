@@ -1,6 +1,6 @@
 (setq markdown-xhtml-header-content
       "<style type='text/css'>
-  .changelog-list{
+  #changelog-list{
     width:100%;
     height:130px;
     overflow:scroll;
@@ -90,6 +90,7 @@ Available options are as follows:
 |        key        |  type   |    default     | description                                            |
 | :---: | :---: | :---: |:--- |
 |list_id|string|"changelog-list"|The id of the list(list_type).|
+|list_class|string|"changelog-list"|The class name of the list(list_type).|
 |list_type|string|"ul"|The list type of the most outer element of the output html.|
 
 ## Seeing log
