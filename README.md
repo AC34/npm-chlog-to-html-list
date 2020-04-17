@@ -2,13 +2,17 @@
 [Changelog](https://keepachangelog.com/) to html list, for embedding it to your html.
 
 ## Changelog
-<ul id="changelog-list"><li><dl><dt></dt>
-<dt></dt>
-</dl>
-</li>
-<li><dl><dt>0.0.0</dt>
+<ul id="changelog-list"><li><dl><dt>0.0.0</dt>
 <dt></dt>
 <dd>initial commit</dd>
+</dl>
+</li>
+<li><dl><dt>0.0.1</dt>
+<dt></dt>
+<dd>added this CHANGELOG.md</dd>
+<dd>changing package description</dd>
+<dd>getList can now take changelog_path as absolute path</dd>
+<dd>some works on parsing bug fix</dd>
 </dl>
 </li>
 </ul>
