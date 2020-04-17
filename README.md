@@ -1,24 +1,6 @@
 # npm-chlog-to-html-list
 [Changelog](https://keepachangelog.com/) to html list, for embedding it to your html.
 
-## Changelog
-<ul id="changelog-list" class="changelog-list" style="height:120px;overflow:scroll;"><li><dl><dt>0.0.1</dt>
-<dt></dt>
-<dd>added this CHANGELOG.md</dd>
-<dd>class option of html</dd>
-<dd>changing package description</dd>
-<dd>getList can now take changelog_path as absolute path</dd>
-<dd>some parsing bug fixes</dd>
-</dl>
-</li>
-<li><dl><dt>0.0.0</dt>
-<dt></dt>
-<dd>initial commit</dd>
-</dl>
-</li>
-</ul>
-
-
 ## Requirements
  - [Node.js](https://nodejs.org/)
  - [npm](https://www.npmjs.com/)
@@ -100,4 +82,22 @@ There can be some updates related to:
  - dependency updates
  - language udpates
  - updates on changelog schemes.
+
+
+## Changes
+<ul id="changelog-list" class="changelog-list"><li><dl><dt>0.0.1</dt>
+<dt></dt>
+<dd>added this CHANGELOG.md</dd>
+<dd>class option of html</dd>
+<dd>changing package description</dd>
+<dd>getList can now take changelog_path as absolute path</dd>
+<dd>some parsing bug fixes</dd>
+</dl>
+</li>
+<li><dl><dt>0.0.0</dt>
+<dt></dt>
+<dd>initial commit</dd>
+</dl>
+</li>
+</ul>
 

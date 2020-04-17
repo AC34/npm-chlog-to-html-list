@@ -1,9 +1,6 @@
 # npm-chlog-to-html-list
 [Changelog](https://keepachangelog.com/) to html list, for embedding it to your html.
 
-## Changelog
-<!--changelog-->
-
 ## Requirements
  - [Node.js](https://nodejs.org/)
  - [npm](https://www.npmjs.com/)
@@ -86,3 +83,6 @@ There can be some updates related to:
  - language udpates
  - updates on changelog schemes.
 
+
+## Changes
+<!--changelog-->
