@@ -92,6 +92,7 @@ There can be some updates related to:
 <dd>changing package description</dd>
 <dd>getList can now take changelog_path as absolute path</dd>
 <dd>some parsing bug fixes</dd>
+<dd>some typo fixes</dd>
 </dl>
 </li>
 <li><dl><dt>0.0.0</dt>
