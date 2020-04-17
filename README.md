@@ -1,18 +1,26 @@
+<style>
+  #changelog-list{
+    width:100%;
+    height:130px;
+    overflow:scroll;
+    resize:vertical; 
+  }
+</style>
 # npm-chlog-to-html-list
 [Changelog](https://keepachangelog.com/) to html list, for embedding it to your html.
 
 ## Changelog
-<ul id="changelog-list"><li><dl><dt>0.0.0</dt>
-<dt></dt>
-<dd>initial commit</dd>
-</dl>
-</li>
-<li><dl><dt>0.0.1</dt>
+<ul id="changelog-list"><li><dl><dt>0.0.1</dt>
 <dt></dt>
 <dd>added this CHANGELOG.md</dd>
 <dd>changing package description</dd>
 <dd>getList can now take changelog_path as absolute path</dd>
-<dd>some works on parsing bug fix</dd>
+<dd>some parsing bug fixes</dd>
+</dl>
+</li>
+<li><dl><dt>0.0.0</dt>
+<dt></dt>
+<dd>initial commit</dd>
 </dl>
 </li>
 </ul>
