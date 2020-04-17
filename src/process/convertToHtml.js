@@ -38,7 +38,7 @@ function convertToHtml(parsed_object, args, Console) {
     html += section;
   }
   //wrap by li wrapper
-  html = makeHtml(args.list_type, html, { id: args.list_id });
+  html = makeHtml(args.list_type, html, { id: args.list_id,class:args.list_class});
   return html;
 }
 
