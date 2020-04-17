@@ -22,11 +22,11 @@ var ChangeLogToHtmlList = {
      * preparation
      */
     this.Console = require("./src/util/Console");
-    this.Console.prepare(args);  
+    this.Console.prepare(args);
     var parse = require("./src/process/parseLogFile");
     var toHtml = require("./src/process/convertToHtml");
     //notify start
-    this.Console.log("getList-started",{});
+    this.Console.log("getList-started", {});
     //need to make sure args are validated
     //needs to have: list_type
     args = validateArguments(args, this.Console);
@@ -35,13 +35,17 @@ var ChangeLogToHtmlList = {
      */
     var parsed_obj = parse(args.changelog, this.Console);
     //quito on falure
-    if(parsed_obj==={})return "";
+    if (parsed_obj === {}) {
+      //notify failure
+      this.Console.log("getList-unsuccessfully-ended", {});
+      return "";
+    }
     //parse the log file into an array of objects, containing the log information
     //now convert the middle object into html
     var html = toHtml(parsed_obj, args, this.Console);
     //finally returning the value
-    //notify start
-    this.Console.log("getList-unsuccessfully-ended",{});
+    //notify end
+    this.Console.log("getList-successfully-ended", {});
     return html;
   },
 };
@@ -97,12 +101,12 @@ function validateArguments(args, Console) {
   if (typeof args !== "object") args = {}; //initialization
   for (var key in defaults) {
     //on empty key
-    if (args[key]===undefined) {
+    if (args[key] === undefined) {
       //fill with default
       args[key] = defaults[key].default;
     }
     //check by range
-    if (defaults[key].range!==undefined) {
+    if (defaults[key].range !== undefined) {
       var range_safe = false;
       for (var range_index in defaults[key].range) {
         if (args[key] === defaults[key].range[range_index]) {
@@ -116,7 +120,7 @@ function validateArguments(args, Console) {
       }
     }
     //else leave it as is
-  }//for
+  } //for
   //update console verbose seting
   Console.vebose = args.verbose;
   //make project information
@@ -124,10 +128,7 @@ function validateArguments(args, Console) {
   args.entry_root = getEntryPointDir();
   //reading package.json file""
   var getPackageJson = require("./src/util/getPackageJson");
-  args.package_json = getPackageJson(
-    args,
-    Console
-  );
+  args.package_json = getPackageJson(args, Console);
   var getChangelogFile = require("./src/util/getChangelogFile");
   args.changelog = getChangelogFile(
     args.project_root,
@@ -137,10 +138,10 @@ function validateArguments(args, Console) {
   return args;
 }
 
-ChangeLogToHtmlList.getLog = function(){
-  if(!this.Console)return [];
-  if(!this.Console.logs)return [];
-  return this.Console.logs; 
-}
+ChangeLogToHtmlList.getLog = function () {
+  if (!this.Console) return [];
+  if (!this.Console.logs) return [];
+  return this.Console.logs;
+};
 
 module.exports = ChangeLogToHtmlList;
