@@ -1,7 +1,13 @@
 var exec = require('child_process');
 
-//prepare
+//embed changelog to README.md as html
+var chlister = require("./index");
+var list = chlister.getList({
+  changelog_file_path:""
+});
 
+
+process.exit(0);
 //update installed modules
 exec.exec('npm install',(err,stdout,stderror)=>{
   console.log(stdout);
