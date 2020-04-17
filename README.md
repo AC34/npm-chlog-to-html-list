@@ -2,7 +2,7 @@
 [Changelog](https://keepachangelog.com/) to html list, for embedding it to your html.
 
 ## Changelog
-<ul id="changelog-list" class="changelog-list"><li><dl><dt>0.0.1</dt>
+<ul id="changelog-list" class="changelog-list" style="height:120px;overflow:scroll;"><li><dl><dt>0.0.1</dt>
 <dt></dt>
 <dd>added this CHANGELOG.md</dd>
 <dd>class option of html</dd>
