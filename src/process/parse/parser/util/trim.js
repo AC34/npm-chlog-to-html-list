@@ -19,7 +19,7 @@ function trimChars(line,character){
     return trimChars(line,character);
   }
   if(line.endsWith(character)){
-    line = line.substring(0,line.length);
+    line = line.substring(0,line.length-1);
     return trimChars(line,character);
   }
   return line;
