@@ -1,13 +1,3 @@
-(setq markdown-xhtml-header-content
-      "<style type='text/css'>
-  #changelog-list{
-    width:100%;
-    height:130px;
-    overflow:scroll;
-    resize:vertical; 
-  }
-</style>")
-
 # npm-chlog-to-html-list
 [Changelog](https://keepachangelog.com/) to html list, for embedding it to your html.
 
