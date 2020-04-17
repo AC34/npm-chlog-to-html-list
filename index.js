@@ -74,6 +74,7 @@ function validateArguments(args, Console) {
   var defaults = {
     //htmls
     list_id: { default: "changelog-list" },
+    list_class:{default:"changelog-list"},
     list_type: { default: "ul" },
     section_element: { default: "dl" },
     section_header_element: { default: "dt" },
