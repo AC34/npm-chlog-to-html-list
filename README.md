@@ -2,7 +2,17 @@
 [Changelog](https://keepachangelog.com/) to html list, for embedding it to your html.
 
 ## Changelog
-<!--changelog-->
+<ul id="changelog-list"><li><dl><dt></dt>
+<dt></dt>
+</dl>
+</li>
+<li><dl><dt>0.0.0</dt>
+<dt></dt>
+<dd>initial commit</dd>
+</dl>
+</li>
+</ul>
+
 
 ## Requirements
  - [Node.js](https://nodejs.org/)

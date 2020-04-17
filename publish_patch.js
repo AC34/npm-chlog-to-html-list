@@ -1,10 +1,7 @@
 var exec = require('child_process');
+var sep = rquire("path").sep;
 
-//embed changelog to README.md as html
-var chlister = require("./index");
-var list = chlister.getList({
-  changelog_file_path:""
-});
+//embed changelog to readme
 
 
 process.exit(0);
