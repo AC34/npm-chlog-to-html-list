@@ -52,7 +52,9 @@ function parseIntoBlocks(lines) {
     //new Section
     if (isSectionStart(line)) {
       //dump old line
-      blocks.push(current);
+      if(current!==""){
+        blocks.push(current);
+      }
       //initialize
       current = line;
       continue;
@@ -67,6 +69,7 @@ function parseIntoBlocks(lines) {
   }
   //add the very last block
   if(current!=="")blocks.push(current);
+  console.log("blocks:"+JSON.stringify(blocks,null," "));
   return blocks;
 }
 /**
