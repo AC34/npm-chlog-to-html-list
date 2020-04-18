@@ -1,6 +1,7 @@
 # npm-chlog-to-html-list
 [Changelog](https://keepachangelog.com/) to html list, for embedding it to your html.
-
+## Announcements
+Preparing, don't use yet.
 ## Requirements
  - [Node.js](https://nodejs.org/)
  - [npm](https://www.npmjs.com/)
@@ -14,9 +15,6 @@ npm install --save-dev npm-chlog-to-html-list
 <ol>
   <li>
     <p>Create a Node.js file, require the module.(No need to Instantiate)</p>
-  </li>
-  <li>
-    <p>Call "getList" method</p>
   </li>
   <li>
     <p>Call getList method.</p>
@@ -85,7 +83,14 @@ There can be some updates related to:
 
 
 ## Changes
-<ul id="changelog-list" class="changelog-list"><li><dl><dt>0.0.1</dt>
+<ul id="changelog-list" class="changelog-list"><li><dl><dt>0.0.2</dt>
+<dt></dt>
+<dd>removing unnecessary files</dd>
+<dd>typo fixes on file names</dd>
+<dd>readme update</dd>
+</dl>
+</li>
+<li><dl><dt>0.0.1</dt>
 <dt></dt>
 <dd>added this CHANGELOG.md</dd>
 <dd>class option of html</dd>
