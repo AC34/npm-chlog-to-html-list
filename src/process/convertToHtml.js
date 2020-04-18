@@ -49,36 +49,42 @@ function convertToHtml(parsed_object, args, Console) {
 function convertEntries(obj,args,section) {
   //Added
   if (obj.Added) {
+    section+=makeHtml(args.entry_title_element,"Added",{});
     for(var i in obj.Added){
       section += makeHtml(args.entry_element, obj.Added[i], {});
     }
   }
   //Changed
   if (obj.Changed) {
+    section+=makeHtml(args.entry_title_element,"Changed",{});
     for(var i in obj.Changed){
       section += makeHtml(args.entry_element, obj.Changed[i], {});
     }
   }
   //Deprecated
   if (obj.Deprecated) {
+    section+=makeHtml(args.entry_title_element,"Deprecated",{});
     for(var i in obj.Deprecated){
       section += makeHtml(args.entry_element, obj.Deprecated[i], {});
     }
   }
   //Removed
   if (obj.Removed) {
+    section+=makeHtml(args.entry_title_element,"Removed",{});
     for(var i in obj.Removed){
       section += makeHtml(args.entry_element, obj.Removed[i], {});
     }
   }
   //Fixed
   if (obj.Fixed) {
+    section+=makeHtml(args.entry_title_element,"Fixed",{});
     for(var i in obj.Fixed){
       section += makeHtml(args.entry_element, obj.Fixed[i], {});
     }
   }
   //Security
   if (obj.Security) {
+    section+=makeHtml(args.entry_title_element,"Security",{});
     for(var i in obj.Security){
       section += makeHtml(args.entry_element, obj.Security[i], {});
     }
