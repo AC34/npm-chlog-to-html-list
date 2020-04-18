@@ -83,8 +83,13 @@ There can be some updates related to:
 
 
 ## Changes
-<ul id="changelog-list" class="changelog-list"><li><dl><dt>0.0.2</dt>
-<dt></dt>
+<ul id="changelog-list" class="changelog-list"><li><dl><dt>0.0.3</dt>
+<dt> 2020-04-18</dt>
+<dd>LICENSE file</dd>
+</dl>
+</li>
+<li><dl><dt>0.0.2</dt>
+<dt> 2020-04-18</dt>
 <dd>removing unnecessary files</dd>
 <dd>typo fixes on file names</dd>
 <dd>readme update</dd>
