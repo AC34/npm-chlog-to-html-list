@@ -1,0 +1,7 @@
+//how to publish
+
+//patch(automated)
+node publish_pathc.js
+
+//minor,major
+manual
