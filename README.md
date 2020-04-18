@@ -1,9 +1,6 @@
 # npm-chlog-to-html-list
 [Changelog](https://keepachangelog.com/) to html list, for embedding it to your html.
 
-## Announcememnt
-Preparing, don't use yet.
-
 ## Requirements
  - [Node.js](https://nodejs.org/)
  - [npm](https://www.npmjs.com/)
@@ -17,6 +14,9 @@ npm install --save-dev npm-chlog-to-html-list
 <ol>
   <li>
     <p>Create a Node.js file, require the module.(No need to Instantiate)</p>
+  </li>
+  <li>
+    <p>Call "getList" method</p>
   </li>
   <li>
     <p>Call getList method.</p>
