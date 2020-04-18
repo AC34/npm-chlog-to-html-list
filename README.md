@@ -83,7 +83,13 @@ There can be some updates related to:
 
 
 ## Changes
-<ul id="changelog-list" class="changelog-list"><li><dl><dt>0.0.2</dt>
+<ul id="changelog-list" class="changelog-list"><li><dl><dt>0.0.3</dt>
+<dt> 2020-04-18</dt>
+<dt>Changed</dt>
+<dd>preferGlobal set to false</dd>
+</dl>
+</li>
+<li><dl><dt>0.0.2</dt>
 <dt> 2020-04-18</dt>
 <dt>Added</dt>
 <dd>LICENSE file</dd>
