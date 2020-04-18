@@ -83,13 +83,11 @@ There can be some updates related to:
 
 
 ## Changes
-<ul id="changelog-list" class="changelog-list"><li><dl><dt>0.0.3</dt>
+<ul id="changelog-list" class="changelog-list"><li><dl><dt>0.0.2</dt>
 <dt> 2020-04-18</dt>
+<dt>Added</dt>
 <dd>LICENSE file</dd>
-</dl>
-</li>
-<li><dl><dt>0.0.2</dt>
-<dt> 2020-04-18</dt>
+<dt>Changed</dt>
 <dd>removing unnecessary files</dd>
 <dd>typo fixes on file names</dd>
 <dd>readme update</dd>
@@ -97,8 +95,10 @@ There can be some updates related to:
 </li>
 <li><dl><dt>0.0.1</dt>
 <dt></dt>
+<dt>Added</dt>
 <dd>added this CHANGELOG.md</dd>
 <dd>class option of html</dd>
+<dt>Changed</dt>
 <dd>changing package description</dd>
 <dd>getList can now take changelog_path as absolute path</dd>
 <dd>some parsing bug fixes</dd>
@@ -107,6 +107,7 @@ There can be some updates related to:
 </li>
 <li><dl><dt>0.0.0</dt>
 <dt></dt>
+<dt>Changed</dt>
 <dd>initial commit</dd>
 </dl>
 </li>

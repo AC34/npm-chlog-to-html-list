@@ -1,9 +1,3 @@
-## [0.0.3] - 2020-04-18
-
-### Added
-
-- LICENSE file
-
 ## [0.0.2] - 2020-04-18
 
 ### Changed
@@ -11,6 +5,10 @@
 - removing unnecessary files
 - typo fixes on file names
 - readme update
+
+### Added
+
+- LICENSE file
 
 ## [0.0.1]
 
