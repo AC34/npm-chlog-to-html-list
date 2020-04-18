@@ -79,6 +79,7 @@ function validateArguments(args, Console) {
     section_element: { default: "dl" },
     section_header_element: { default: "dt" },
     date_element: { default: "dd" },
+    entry_title_element:{default:"dt"},
     entry_element: { default: "dd" },
     text_content_element: { default: "dd" },
     link_element: { default: "dd" }, //a tag is automatically added
