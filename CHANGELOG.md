@@ -1,4 +1,7 @@
-
+## [0.0.2]
+- removing unnecessary files
+- typo fixes on file names
+- readme update
 ## [0.0.1]
 ### Changed
  - changing package description
