@@ -16,9 +16,6 @@ npm install --save-dev npm-chlog-to-html-list
     <p>Create a Node.js file, require the module.(No need to Instantiate)</p>
   </li>
   <li>
-    <p>Call "getList" method</p>
-  </li>
-  <li>
     <p>Call getList method.</p>
     <ol>
       <li><p>Set option as an object "{}".</p></li>
